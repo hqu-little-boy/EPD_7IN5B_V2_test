@@ -1,0 +1,10 @@
+/home/pi/.cache/JetBrains/RemoteDev/dist/c0ab96c1f8a11_CLion-233.11799.37-aarch64/bin/cmake/linux/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/pi/.cache/JetBrains/RemoteDev/dist/c0ab96c1f8a11_CLion-233.11799.37-aarch64/bin/ninja/linux/aarch64/ninja -G Ninja -S /home/pi/e-papaer.c -B /home/pi/e-papaer.c/cmake-build-debug
+-- The C compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (3.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/pi/e-papaer.c/cmake-build-debug

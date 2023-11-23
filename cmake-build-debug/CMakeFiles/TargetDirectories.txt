@@ -1,0 +1,3 @@
+/home/pi/e-papaer.c/cmake-build-debug/CMakeFiles/e_papaer_c.dir
+/home/pi/e-papaer.c/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/pi/e-papaer.c/cmake-build-debug/CMakeFiles/rebuild_cache.dir

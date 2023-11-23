@@ -1,0 +1,21 @@
+# ninja log v5
+1	36	1700573963786814168	CMakeFiles/e_papaer_c.dir/lib/Config/DEV_Config.c.o	207fcb5071be5dac
+0	24	1700573963774814167	CMakeFiles/e_papaer_c.dir/lib/Fonts/font8.c.o	774bd16cc7cb915c
+1	59	1700574555773862614	CMakeFiles/e_papaer_c.dir/lib/GUI/GUI_BMPfile.c.o	b97d30d8d3727d7c
+1	36	1700574555750862612	CMakeFiles/e_papaer_c.dir/main.c.o	ba25c0c716148cda
+1	36	1700574555751862612	CMakeFiles/e_papaer_c.dir/src/EPD_7in5b_V2_test.c.o	60434a7678f89294
+1	27	1700573963777814167	CMakeFiles/e_papaer_c.dir/lib/Fonts/font16.c.o	4085d6a0782bfd46
+1	23	1700573963773814167	CMakeFiles/e_papaer_c.dir/lib/Fonts/font12CN.c.o	a7aa98895fea348e
+1	35	1700574071485822982	CMakeFiles/e_papaer_c.dir/lib/Config/dev_hardware_SPI.c.o	da2349d166d78541
+1	24	1700573963774814167	CMakeFiles/e_papaer_c.dir/lib/Fonts/font12.c.o	295cc52182fcacfe
+1	27	1700573963777814167	CMakeFiles/e_papaer_c.dir/lib/Fonts/font20.c.o	b3ae8f241af1340
+1	36	1700574555750862612	CMakeFiles/e_papaer_c.dir/lib/e-Paper/EPD_7in5_V2.c.o	aa194eb5dc374936
+1	31	1700573963781814168	CMakeFiles/e_papaer_c.dir/lib/Fonts/font24.c.o	37cce1e5dbc80762
+1	68	1700574328722844033	CMakeFiles/e_papaer_c.dir/lib/GUI/GUI_Paint.c.o	337d21bd78895aed
+2	579	1700574072028823026	CMakeFiles/e_papaer_c.dir/src/ImageData.c.o	2f8eeab3ef477d1d
+1	29	1700573963779814168	CMakeFiles/e_papaer_c.dir/lib/Fonts/font24CN.c.o	30e2864ed1e9bcdd
+2	86	1700574071536822986	CMakeFiles/e_papaer_c.dir/src/ImageData2.c.o	1eacaee583e4e5dd
+0	18	1700578795716353267	build.ninja	91d96b1f97d1cda6
+1	33	1700575877031970741	CMakeFiles/e_papaer_c.dir/lib/Config/sysfs_software_spi.c.o	5144ffc0ca26d9bd
+0	38	1700577162990075978	CMakeFiles/e_papaer_c.dir/lib/Config/sysfs_gpio.c.o	cb40bfec408bfb80
+1	35	1700574343470845240	CMakeFiles/e_papaer_c.dir/lib/e-Paper/EPD_7in5b_V2.c.o	a63b36a7efcb5bf3
