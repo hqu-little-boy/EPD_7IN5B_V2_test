@@ -32,10 +32,9 @@
 
 #include "../lib/Config/DEV_Config.h"
 #include "../lib/GUI/GUI_Paint.h"
-#include "../lib/GUI/GUI_BMPfile.h"
 #include "ImageData.h"
 #include "../lib/Config/Debug.h"
 #include <stdlib.h> // malloc() free()
 
-int EPD_7in5b_V2_test(void);
+int EPD_5in83_V2_test(void);
 #endif

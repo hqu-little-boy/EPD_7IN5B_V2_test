@@ -74,24 +74,8 @@
 #include "../Fonts/fonts.h"
 #include "../Config/DEV_Config.h"
 
-/**
- * Image attributes
-**/
-typedef struct {
-    UBYTE *Image;
-    UWORD Width;
-    UWORD Height;
-    UWORD WidthMemory;
-    UWORD HeightMemory;
-    UWORD Color;
-    UWORD Rotate;
-    UWORD Mirror;
-    UWORD WidthByte;
-    UWORD HeightByte;
-    UWORD Scale;
-} PAINT;
-extern PAINT Paint;
 
+// extern PAINT Paint;
 /**
  * Display rotate
 **/
@@ -168,18 +152,69 @@ typedef enum {
     DRAW_FILL_FULL,
 } DRAW_FILL;
 
+
 /**
  * Custom structure of a time attribute
 **/
-typedef struct {
+class PAINT_TIME{
+public:
     UWORD Year;  //0000
     UBYTE  Month; //1 - 12
     UBYTE  Day;   //1 - 30
     UBYTE  Hour;  //0 - 23
     UBYTE  Min;   //0 - 59
     UBYTE  Sec;   //0 - 59
-} PAINT_TIME;
-extern PAINT_TIME sPaint_time;
+};
+/*Bitmap file header   14bit*/
+typedef struct BMP_FILE_HEADER {
+    UWORD bType;        //File identifier
+    UDOUBLE bSize;      //The size of the file
+    UWORD bReserved1;   //Reserved value, must be set to 0
+    UWORD bReserved2;   //Reserved value, must be set to 0
+    UDOUBLE bOffset;    //The offset from the beginning of the file header to the beginning of the image data bit
+} __attribute__ ((packed)) BMPFILEHEADER;    // 14bit
+
+/*Bitmap information header  40bit*/
+typedef struct BMP_INFO {
+    UDOUBLE biInfoSize;      //The size of the header
+    UDOUBLE biWidth;         //The width of the image
+    UDOUBLE biHeight;        //The height of the image
+    UWORD biPlanes;          //The number of planes in the image
+    UWORD biBitCount;        //The number of bits per pixel
+    UDOUBLE biCompression;   //Compression type
+    UDOUBLE bimpImageSize;   //The size of the image, in bytes
+    UDOUBLE biXPelsPerMeter; //Horizontal resolution
+    UDOUBLE biYPelsPerMeter; //Vertical resolution
+    UDOUBLE biClrUsed;       //The number of colors used
+    UDOUBLE biClrImportant;  //The number of important colors
+} __attribute__ ((packed)) BMPINFOHEADER;
+
+/*Color table: palette */
+typedef struct RGB_QUAD {
+    UBYTE rgbBlue;               //Blue intensity
+    UBYTE rgbGreen;              //Green strength
+    UBYTE rgbRed;                //Red intensity
+    UBYTE rgbReversed;           //Reserved value
+} __attribute__ ((packed)) BMPRGBQUAD;
+/**************************************** end ***********************************************/
+
+/**
+ * Image attributes
+**/
+class Paint{
+public:
+    UBYTE *Image;
+    UWORD Width;
+    UWORD Height;
+    UWORD WidthMemory;
+    UWORD HeightMemory;
+    UWORD Color;
+    UWORD Rotate;
+    UWORD Mirror;
+    UWORD WidthByte;
+    UWORD HeightByte;
+    UWORD Scale;
+
 
 //init and Clear
 void Paint_NewImage(UBYTE *image, UWORD Width, UWORD Height, UWORD Rotate, UWORD Color);
@@ -209,6 +244,12 @@ void Paint_DrawTime(UWORD Xstart, UWORD Ystart, PAINT_TIME *pTime, sFONT* Font, 
 //pic
 void Paint_DrawBitMap(const unsigned char* image_buffer);
 
+UBYTE GUI_ReadBmp(const char *path, UWORD Xstart, UWORD Ystart);
+UBYTE GUI_ReadBmp_4Gray(const char *path, UWORD Xstart, UWORD Ystart);
+UBYTE GUI_ReadBmp_16Gray(const char *path, UWORD Xstart, UWORD Ystart);
+UBYTE GUI_ReadBmp_RGB_4Color(const char *path, UWORD Xstart, UWORD Ystart);
+UBYTE GUI_ReadBmp_RGB_7Color(const char *path, UWORD Xstart, UWORD Ystart);
+};
 
 #endif
 

@@ -11,24 +11,24 @@
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documnetation files (the "Software"), to deal
-# SYSFS_GPIO_IN the Software without restriction, including without limitation the rights
+# in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to  whom the Software is
-# furished to do so, subject to the folSYSFS_GPIO_LOWing conditions:
+# furished to do so, subject to the following conditions:
 #
-# The above copyright notice and this permission notice shall be included SYSFS_GPIO_IN
+# The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS OR A PARTICULAR PURPOSE AND NONINFRINGEMENT. SYSFS_GPIO_IN NO EVENT SHALL THE
+# FITNESS OR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY WHETHER SYSFS_GPIO_IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# SYSFS_GPIO_OUT OF OR SYSFS_GPIO_IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS SYSFS_GPIO_IN
+# LIABILITY WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 #
 ******************************************************************************/
-#include "RPI_sysfs_gpio.h"
+#include "sysfs_gpio.h"
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
@@ -92,12 +92,12 @@ int SYSFS_GPIO_Direction(int Pin, int Dir)
         return -1;
     }
 
-    if (write(fd, &dir_str[Dir == SYSFS_GPIO_IN ? 0 : 3], Dir == SYSFS_GPIO_IN ? 2 : 3) < 0) {
+    if (write(fd, &dir_str[Dir == IN ? 0 : 3], Dir == IN ? 2 : 3) < 0) {
         SYSFS_GPIO_Debug("failed to set direction!\r\n");
         return -1;
     }
 
-    if(Dir == SYSFS_GPIO_IN){
+    if(Dir == IN){
         SYSFS_GPIO_Debug("Pin%d:intput\r\n", Pin);
     }else{
         SYSFS_GPIO_Debug("Pin%d:Output\r\n", Pin);
@@ -142,7 +142,7 @@ int SYSFS_GPIO_Write(int Pin, int value)
         return -1;
     }
 
-    if (write(fd, &s_values_str[value == SYSFS_GPIO_LOW ? 0 : 1], 1) < 0) {
+    if (write(fd, &s_values_str[value == LOW ? 0 : 1], 1) < 0) {
         SYSFS_GPIO_Debug( "failed to write value!\n");
         return -1;
     }

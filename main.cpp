@@ -1,5 +1,6 @@
-﻿#include <stdlib.h>     //exit()
-#include <signal.h>     //signal()
+﻿#include <cstdio>
+#include <cstdlib>     //exit()
+#include <csignal>     //signal()
 #include "src/EPD_Test.h"   //Examples
 #include "lib/Config/DEV_Config.h"
 
@@ -12,13 +13,13 @@ void  Handler(int signo)
     exit(0);
 }
 
-int main(void)
+int main()
 {
-    // Exception handling:ctrl + c
+    // // Exception handling:ctrl + c
     signal(SIGINT, Handler);
 
-    EPD_7in5b_V2_test();
-
+    EPD_5in83_V2_test();
+    // printf("hello world\n");
     
     return 0;
 }
