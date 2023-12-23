@@ -29,6 +29,8 @@
 ******************************************************************************/
 #include "EPD_Test.h"
 #include "../lib/e-Paper/EPD_5in83_V2.h"
+#include "../entity/Qweather/Weather.h"
+#include "../entity/Pic/EinkPic.h"
 
 #include "time.h"
 
@@ -63,7 +65,9 @@ int EPD_5in83_V2_test(void)
 // #if 1   // show bmp
     printf("show bmp------------------------\r\n");
     paint.Paint_SelectImage(BlackImage);
-    paint.GUI_ReadBmp("/root/EPD_7IN5B_V2_test/pic/5in83_V2.bmp", 0, 0);
+    EinkPic::EinkPic einkPic{"/root/EPD_7IN5B_V2_test/config.json"};
+    einkPic.InitImg();
+    paint.GUI_ReadMat(einkPic.GetImg(), 0, 0);
     printf("show bmp------------------------\r\n");
     EPD_5in83_V2_Display(BlackImage);
     DEV_Delay_ms(2000);
@@ -80,12 +84,12 @@ int EPD_5in83_V2_test(void)
 
 #if 1   // Drawing on the image
     //1.Select Image
-    printf("SelectImage:BlackImage\r\n");
-    paint.Paint_SelectImage(BlackImage);
-    paint.Paint_Clear(WHITE);
+    // printf("SelectImage:BlackImage\r\n");
+    // paint.Paint_SelectImage(BlackImage);
+    // paint.Paint_Clear(WHITE);
 
     // 2.Drawing on the image
-    printf("Drawing:BlackImage\r\n");
+    // printf("Drawing:BlackImage\r\n");
     // paint.Paint_DrawPoint(10, 80, BLACK, DOT_PIXEL_1X1, DOT_STYLE_DFT);
     // paint.Paint_DrawPoint(10, 90, BLACK, DOT_PIXEL_2X2, DOT_STYLE_DFT);
     // paint.Paint_DrawPoint(10, 100, BLACK, DOT_PIXEL_3X3, DOT_STYLE_DFT);

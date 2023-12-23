@@ -73,7 +73,7 @@
 //#include "DEV_Config.h"
 #include "../Fonts/fonts.h"
 #include "../Config/DEV_Config.h"
-
+#include <opencv2/opencv.hpp>
 
 // extern PAINT Paint;
 /**
@@ -245,6 +245,7 @@ void Paint_DrawTime(UWORD Xstart, UWORD Ystart, PAINT_TIME *pTime, sFONT* Font, 
 void Paint_DrawBitMap(const unsigned char* image_buffer);
 
 UBYTE GUI_ReadBmp(const char *path, UWORD Xstart, UWORD Ystart);
+UBYTE GUI_ReadMat(const cv::Mat &img, UWORD Xstart, UWORD Ystart);
 UBYTE GUI_ReadBmp_4Gray(const char *path, UWORD Xstart, UWORD Ystart);
 UBYTE GUI_ReadBmp_16Gray(const char *path, UWORD Xstart, UWORD Ystart);
 UBYTE GUI_ReadBmp_RGB_4Color(const char *path, UWORD Xstart, UWORD Ystart);

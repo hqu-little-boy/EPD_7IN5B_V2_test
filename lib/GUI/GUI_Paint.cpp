@@ -973,8 +973,22 @@ UBYTE Paint::GUI_ReadBmp(const char *path, UWORD Xstart, UWORD Ystart)
     return 0;
 }
 /*************************************************************************
-
 *************************************************************************/
+UBYTE Paint::GUI_ReadMat(const cv::Mat &img, UWORD Xstart, UWORD Ystart)
+{
+    UWORD Bcolor = BLACK;
+    UWORD Wcolor = WHITE;
+    for(int y = 0; y < img.rows; y++) {
+        for(int x = 0; x < img.cols; x++) {
+            if(x > this->Width || y > this->Height) {
+                break;
+            }
+            UBYTE color = img.at<uchar>(y, x) < 123 ? Bcolor : Wcolor;
+            this->Paint_SetPixel(Xstart + x, Ystart + y, color);
+        }
+    }
+    return 0;
+}
 UBYTE Paint::GUI_ReadBmp_4Gray(const char *path, UWORD Xstart, UWORD Ystart)
 {
     FILE *fp;                     //Define a file pointer

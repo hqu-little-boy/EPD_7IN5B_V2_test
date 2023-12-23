@@ -1,0 +1,11 @@
+{
+  "width": 648,
+  "height": 480,
+  "location": "siming",
+  "adm": "xiamen",
+  "q-weather-key": "",
+  "backgroundPath": "\/root\/EPD_7IN5B_V2_test\/background",
+  "picPath": "\/root\/EPD_7IN5B_V2_test\/bw-128",
+  "MengMeiZiTiPath": "\/root\/EPD_7IN5B_V2_test\/MengMeiZiTi-1.ttf",
+  "SmileySansPath": "\/root\/EPD_7IN5B_V2_test\/SmileySans-Oblique.ttf"
+}
